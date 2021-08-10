@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB232792-39A1-44AD-9527-DCD89F8655F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zj</RootNamespace>
+    <AssemblyName>zj</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>图标.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>33716EDEFB1E2FA2BBA70A34C852BF3760CA35A0</ManifestCertificateThumbprint>
+    <ManifestKeyFile>zj_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Documents and Settings\CYJ\桌面\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Access.Dao, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Access.Dao.15.0.4420.1017\lib\net20\Microsoft.Office.Interop.Access.Dao.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <HintPath>..\..\..\..\..\..\..\..\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <HintPath>..\..\..\..\..\..\..\..\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net20\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net20\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net20\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net20\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessHelper.cs" />
+    <Compile Include="ADD11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD11.Designer.cs">
+      <DependentUpon>ADD11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="atest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="atest.Designer.cs">
+      <DependentUpon>atest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BJDW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BJDW.Designer.cs">
+      <DependentUpon>BJDW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BMTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BMTree.Designer.cs">
+      <DependentUpon>BMTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="check.designer.cs">
+      <DependentUpon>check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassConstants.cs" />
+    <Compile Include="ClassHirachy.cs" />
+    <Compile Include="ClassInputRestricter.cs" />
+    <Compile Include="copyright.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="copyright.Designer.cs">
+      <DependentUpon>copyright.cs</DependentUpon>
+    </Compile>
+    <Compile Include="danwei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="danwei.Designer.cs">
+      <DependentUpon>danwei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCRTSJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DCRTSJ.Designer.cs">
+      <DependentUpon>DCRTSJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DRMBXZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DRMBXZ.Designer.cs">
+      <DependentUpon>DRMBXZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DWTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DWTree.Designer.cs">
+      <DependentUpon>DWTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DWXX.cs" />
+    <Compile Include="ExcelUI.cs" />
+    <Compile Include="FileManipulate.cs" />
+    <Compile Include="babackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="babackup.Designer.cs">
+      <DependentUpon>babackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderOrFileHelper.cs" />
+    <Compile Include="Form_select_jdk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_select_jdk.Designer.cs">
+      <DependentUpon>Form_select_jdk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAssetsSaving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAssetsSaving.designer.cs">
+      <DependentUpon>FrmAssetsSaving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBankAccountCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBankAccountCheck.designer.cs">
+      <DependentUpon>FrmBankAccountCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBankAccountStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBankAccountStatistics.designer.cs">
+      <DependentUpon>FrmBankAccountStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBcardBM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBcardBM.Designer.cs">
+      <DependentUpon>FrmBcardBM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBCardDRMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBCardDRMX.Designer.cs">
+      <DependentUpon>FrmBCardDRMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBcardJDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBcardJDK.Designer.cs">
+      <DependentUpon>FrmBcardJDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBcardTCWP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBcardTCWP.Designer.cs">
+      <DependentUpon>FrmBcardTCWP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBCardUsageStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBCardUsageStatistics.designer.cs">
+      <DependentUpon>FrmBCardUsageStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBcardWLK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBcardWLK.Designer.cs">
+      <DependentUpon>FrmBcardWLK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBZK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBZK.Designer.cs">
+      <DependentUpon>FrmBZK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCashUsage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCashUsage.designer.cs">
+      <DependentUpon>FrmCashUsage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDQCKMX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDQCKMX.designer.cs">
+      <DependentUpon>FrmDQCKMX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_wlkx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_wlkx.Designer.cs">
+      <DependentUpon>Frm_select_wlkx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="initialization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="initialization.Designer.cs">
+      <DependentUpon>initialization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="instruction.Designer.cs">
+      <DependentUpon>instruction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LCTC.cs" />
+    <Compile Include="MDIMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIMain.Designer.cs">
+      <DependentUpon>MDIMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLSJDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLSJDR.Designer.cs">
+      <DependentUpon>PLSJDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLXGSJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLXGSJ.Designer.cs">
+      <DependentUpon>PLXGSJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="receive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="receive.Designer.cs">
+      <DependentUpon>receive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="recover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recover.Designer.cs">
+      <DependentUpon>recover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="password.Designer.cs">
+      <DependentUpon>password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RTSJDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RTSJDR.Designer.cs">
+      <DependentUpon>RTSJDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPFBQKTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFBQKTJ.Designer.cs">
+      <DependentUpon>WPFBQKTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPHZTJB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPHZTJB.Designer.cs">
+      <DependentUpon>WPHZTJB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPMXTJB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPMXTJB.Designer.cs">
+      <DependentUpon>WPMXTJB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPXHJHB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPXHJHB.Designer.cs">
+      <DependentUpon>WPXHJHB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WPYJJHB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPYJJHB.Designer.cs">
+      <DependentUpon>WPYJJHB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YJWPJDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YJWPJDB.Designer.cs">
+      <DependentUpon>YJWPJDB.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ADD11.resx">
+      <DependentUpon>ADD11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="atest.resx">
+      <DependentUpon>atest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BJDW.resx">
+      <DependentUpon>BJDW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BMTree.resx">
+      <DependentUpon>BMTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="check.resx">
+      <DependentUpon>check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="copyright.resx">
+      <DependentUpon>copyright.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="danwei.resx">
+      <DependentUpon>danwei.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="babackup.resx">
+      <DependentUpon>babackup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DCRTSJ.resx">
+      <DependentUpon>DCRTSJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DRMBXZ.resx">
+      <DependentUpon>DRMBXZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DWTree.resx">
+      <DependentUpon>DWTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_select_jdk.resx">
+      <DependentUpon>Form_select_jdk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAssetsSaving.resx">
+      <DependentUpon>FrmAssetsSaving.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBankAccountCheck.resx">
+      <DependentUpon>FrmBankAccountCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBankAccountStatistics.resx">
+      <DependentUpon>FrmBankAccountStatistics.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBcardBM.resx">
+      <DependentUpon>FrmBcardBM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBCardDRMX.resx">
+      <DependentUpon>FrmBCardDRMX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBcardJDK.resx">
+      <DependentUpon>FrmBcardJDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBcardTCWP.resx">
+      <DependentUpon>FrmBcardTCWP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBCardUsageStatistics.resx">
+      <DependentUpon>FrmBCardUsageStatistics.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBcardWLK.resx">
+      <DependentUpon>FrmBcardWLK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBZK.resx">
+      <DependentUpon>FrmBZK.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCashUsage.resx">
+      <DependentUpon>FrmCashUsage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDQCKMX.resx">
+      <DependentUpon>FrmDQCKMX.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_wlkx.resx">
+      <DependentUpon>Frm_select_wlkx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="initialization.resx">
+      <DependentUpon>initialization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="instruction.resx">
+      <DependentUpon>instruction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIMain.resx">
+      <DependentUpon>MDIMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLSJDR.resx">
+      <DependentUpon>PLSJDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLXGSJ.resx">
+      <DependentUpon>PLXGSJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="receive.resx">
+      <DependentUpon>receive.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recover.resx">
+      <DependentUpon>recover.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report.resx">
+      <DependentUpon>report.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="password.resx">
+      <DependentUpon>password.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_A3.resx">
+      <DependentUpon>report_A3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_A4.resx">
+      <DependentUpon>report_A4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_account.resx">
+      <DependentUpon>Frm_select_account.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_deposite.resx">
+      <DependentUpon>Frm_select_deposite.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_saving.resx">
+      <DependentUpon>Frm_select_saving.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_cash.resx">
+      <DependentUpon>Frm_select_cash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_card.resx">
+      <DependentUpon>Frm_select_card.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_select_check.resx">
+      <DependentUpon>Frm_select_check.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RTSJDR.resx">
+      <DependentUpon>RTSJDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelcetFrmWP.resx">
+      <DependentUpon>SelcetFrmWP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSDWHZ.resx">
+      <DependentUpon>SSDWHZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFBQKTJ.resx">
+      <DependentUpon>WPFBQKTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPHZTJB.resx">
+      <DependentUpon>WPHZTJB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPMXTJB.resx">
+      <DependentUpon>WPMXTJB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPXHJHB.resx">
+      <DependentUpon>WPXHJHB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPYJJHB.resx">
+      <DependentUpon>WPYJJHB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YJWPJDB.resx">
+      <DependentUpon>YJWPJDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="report_A3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_A3.Designer.cs">
+      <DependentUpon>report_A3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_A4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_A4.Designer.cs">
+      <DependentUpon>report_A4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_account.Designer.cs">
+      <DependentUpon>Frm_select_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelcetFrmWP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelcetFrmWP.Designer.cs">
+      <DependentUpon>SelcetFrmWP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="select_report.cs" />
+    <Compile Include="SSDWHZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSDWHZ.Designer.cs">
+      <DependentUpon>SSDWHZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TCLCData.cs" />
+    <Compile Include="WordUI.cs" />
+    <Compile Include="Frm_select_deposite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_deposite.Designer.cs">
+      <DependentUpon>Frm_select_deposite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_saving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_saving.Designer.cs">
+      <DependentUpon>Frm_select_saving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_cash.Designer.cs">
+      <DependentUpon>Frm_select_cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_card.Designer.cs">
+      <DependentUpon>Frm_select_card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_select_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_select_check.Designer.cs">
+      <DependentUpon>Frm_select_check.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\SLAVEBOARD01.JPEG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\006.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\006.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\007.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\008.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\009.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\picture\login1.jpg" />
+    <None Include="bin\Debug\picture\login2.jpg" />
+    <None Include="bin\Debug\picture\部徽2007.png" />
+    <None Include="bin\Debug\picture\部徽2007.jpg" />
+    <None Include="bin\Debug\picture\login.jpg" />
+    <None Include="Properties\app.manifest" />
+    <None Include="zj_TemporaryKey.pfx" />
+    <None Include="bin\Debug\picture\022.png" />
+    <None Include="bin\Debug\picture\021.png" />
+    <None Include="bin\Debug\picture\新增.ico" />
+    <None Include="bin\Debug\picture\查询.ico" />
+    <None Include="bin\Debug\picture\编辑.ico" />
+    <None Include="bin\Debug\picture\删除.ico" />
+    <None Include="bin\Debug\picture\下载.ico" />
+    <None Include="bin\Debug\picture\导入.ico" />
+    <None Include="bin\Debug\picture\导出.ico" />
+    <Content Include="bin\Debug\picture\001.png" />
+    <Content Include="bin\Debug\picture\002.png" />
+    <Content Include="bin\Debug\picture\003.png" />
+    <Content Include="bin\Debug\picture\004.png" />
+    <Content Include="bin\Debug\picture\005.png" />
+    <Content Include="bin\Debug\picture\017.png" />
+    <Content Include="bin\Debug\picture\018.png" />
+    <Content Include="bin\Debug\picture\110.png" />
+    <Content Include="bin\Debug\picture\161.png" />
+    <Content Include="bin\Debug\picture\168.png" />
+    <Content Include="bin\Debug\picture\queding.jpg" />
+    <Content Include="bin\Debug\picture\图标.ico" />
+    <Content Include="bin\Debug\picture\部徽2007.ico" />
+    <Content Include="color2.ico" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\file_184.24747474747px_1201732_easyicon.net.ico" />
+    <None Include="Resources\编辑.ico" />
+    <None Include="Resources\查询.ico" />
+    <None Include="Resources\导出.ico" />
+    <None Include="Resources\导入.ico" />
+    <None Include="Resources\删除.ico" />
+    <None Include="Resources\下载.ico" />
+    <None Include="Resources\新增.ico" />
+    <Content Include="图标.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
